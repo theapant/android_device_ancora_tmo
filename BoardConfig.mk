@@ -56,23 +56,27 @@ TARGET_SCREEN_HEIGHT := 800
 TARGET_SCREEN_WIDTH := 480
 
 # Wifi related defines
-BOARD_WPA_SUPPLICANT_DRIVER      := WEXT
-WPA_SUPPLICANT_VERSION           := VER_0_8_X
-BOARD_WLAN_DEVICE                := bcm4329
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_wext
 WIFI_BAND                        := 802_11_ABG
-WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/dhd.ko"
-WIFI_DRIVER_FW_PATH_STA          := "/vendor/firmware/fw_bcm4329.bin"
-WIFI_DRIVER_FW_PATH_AP           := "/vendor/firmware/fw_bcm4329_apsta.bin"
+WPA_SUPPLICANT_VERSION           := VER_0_8_X
+BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
+BOARD_HOSTAPD_DRIVER             := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_bcmdhd
+BOARD_WLAN_DEVICE                := bcmdhd
+
+WIFI_DRIVER_MODULE_PATH          := "/lib/modules/dhd.ko"
 WIFI_DRIVER_MODULE_NAME          := "dhd"
-WIFI_DRIVER_MODULE_ARG           := "iface_name=wlan0 firmware_path=/vendor/firmware/fw_bcm4329.bin nvram_path=/vendor/firmware/nvram_net.txt"
+WIFI_DRIVER_MODULE_ARG           := "firmware_path=/vendor/firmware/fw_bcmdhd.bin nvram_path=/vendor/firmware/nvram_net.txt"
+WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/dhd/parameters/firmware_path"
+WIFI_DRIVER_FW_PATH_STA          := "/vendor/firmware/fw_bcmdhd.bin"
+WIFI_DRIVER_FW_PATH_AP           := "/vendor/firmware/fw_bcmdhd_apsta.bin"
 
 BOARD_KERNEL_BASE := 0x00400000
 BOARD_KERNEL_PAGESIZE := 4096
 
 # Bluetooth
+BOARD_BLUEDROID_VENDOR_CONF := device/samsung/ancora_tmo/bluetooth/vnd_ancora_tmo.txt
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/ancora_tmo/bluetooth/include
-BOARD_BLUEDROID_VENDOR_CONF := device/samsung/ancora_tmo/bluetooth/vnd_msm7x30.txt
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 TARGET_NEEDS_BLUETOOTH_INIT_DELAY := true
@@ -104,6 +108,8 @@ BOARD_NEEDS_MEMORYHEAPPMEM := true
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_QCOM_AUDIO_VARIANT := caf
+TARGET_QCOM_DISPLAY_VARIANT := caf
+TARGET_USES_QCOM_BSP := true
 BOARD_USES_QCOM_GPS := true
 
 BOARD_USE_LEGACY_TOUCHSCREEN := true

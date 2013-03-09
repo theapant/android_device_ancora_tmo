@@ -53,9 +53,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/vold.fstab:system/etc/vold.fstab \
     $(LOCAL_PATH)/config/nvram_net.txt:system/vendor/firmware/nvram_net.txt \
     $(LOCAL_PATH)/prebuilt/get_macaddrs:system/bin/get_macaddrs \
-    $(LOCAL_PATH)/prebuilt/audio_policy.conf:system/etc/audio_policy.conf \
-    $(LOCAL_PATH)/prebuilt/fw_bcm4329.bin:system/vendor/firmware/fw_bcm4329.bin \
-    $(LOCAL_PATH)/prebuilt/fw_bcm4329_apsta.bin:system/vendor/firmware/fw_bcm4329_apsta.bin
+    $(LOCAL_PATH)/prebuilt/audio_policy.conf:system/etc/audio_policy.conf
 
 # Needed to reset bootmode when leaving recovery
 PRODUCT_COPY_FILES += \
@@ -78,6 +76,9 @@ PRODUCT_COPY_FILES += \
 
 # Modules
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilt/dhd.ko:root/lib/modules/dhd.ko \
+    $(LOCAL_PATH)/prebuilt/cifs.ko:root/lib/modules/cifs.ko \
+    $(LOCAL_PATH)/prebuilt/scsi_wait_scan.ko:root/lib/modules/scsi_wait_scan.ko \
     $(LOCAL_PATH)/prebuilt/cifs.ko:system/lib/modules/cifs.ko \
     $(LOCAL_PATH)/prebuilt/dhd.ko:system/lib/modules/dhd.ko \
     $(LOCAL_PATH)/prebuilt/scsi_wait_scan.ko:system/lib/modules/scsi_wait_scan.ko
@@ -145,6 +146,7 @@ PRODUCT_PACKAGES += \
     setup_fs
 
 PRODUCT_PACKAGES += \
+    com.android.future.usb.accessory \
     hciconfig \
     hcitool \
     libaudioutils
@@ -169,3 +171,4 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
 $(call inherit-product-if-exists, vendor/samsung/ancora_tmo/device-vendor.mk)
+$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4329/device-bcm.mk)
