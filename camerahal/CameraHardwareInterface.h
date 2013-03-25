@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2008 The Android Open Source Project
+ * Copyright (C) 2010, Code Aurora Forum. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -232,6 +233,8 @@ namespace android {
          * Dump state of the camera hardware
          */
         virtual status_t dump(int fd, const Vector<String16>& args) const = 0;
+
+        virtual void takeLiveSnapshot() = 0;
     };
 
     /**
