@@ -110,7 +110,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/lpm/media/battery_error.qmg:system/media/battery_error.qmg \
     $(LOCAL_PATH)/lpm/media/chargingwarning.qmg:system/media/chargingwarning.qmg
 
-PPRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     camera.msm7x30 \
     copybit.msm7x30 \
     gralloc.msm7x30 \
