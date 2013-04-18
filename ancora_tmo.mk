@@ -121,7 +121,9 @@ PRODUCT_PACKAGES += \
     audio.primary.msm7x30 \
     audio_policy.msm7x30 \
     audio.a2dp.default \
-    audio.usb.default
+    audio.usb.default \
+    libaudio-resampler \
+    libaudioparameter
 
 PRODUCT_PACKAGES += \
     libmm-omxcore \
@@ -143,7 +145,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory \
-    librpc
+    libnetcmdiface
 
 # For userdebug builds
 ADDITIONAL_DEFAULT_PROPERTIES += \
