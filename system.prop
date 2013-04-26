@@ -38,9 +38,6 @@ debug.sf.hw=1
 #debug.egl.hw=1
 debug.mdpcomp.logs=0
 
-# QCOM CpuGovernorService
-dev.pm.dyn_samplingrate=1
-
 # Low Power Audio
 lpa.decode=false
 lpa.use-stagefright=false
@@ -57,3 +54,11 @@ ro.vold.switchablepair=/storage/sdcard0,/storage/sdcard1
 
 # Enable repeatable keys in recovery
 ro.cwm.enable_key_repeat=true
+
+# Hardware Info
+ro.device.chipset=Qualcomm MSM8255 Snapdragon
+ro.device.cpu=1 GHz Scorpion
+ro.device.gpu=Adreno 205
+ro.device.rear_cam=3.15 MP, 2048x1536 pixels
+ro.device.front_cam=VGA
+ro.device.screen_res=400x800
