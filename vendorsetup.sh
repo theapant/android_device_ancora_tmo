@@ -1,1 +1,1 @@
-add_lunch_combo cm_ancora_tmo-userdebug
+add_lunch_combo pac_ancora_tmo-userdebug
