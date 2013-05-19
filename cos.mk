@@ -1,8 +1,8 @@
 # Specify phone tech before including full_phone
-$(call inherit-product, vendor/cm/config/gsm.mk)
+$(call inherit-product, vendor/cos/config/gsm.mk)
 
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+# Inherit some common cos stuff.
+$(call inherit-product, vendor/cos/config/common_full_phone.mk)
 
 # Inherit device configuration
 $(call inherit-product, $(LOCAL_PATH)/full_ancora_tmo.mk)
@@ -10,7 +10,7 @@ $(call inherit-product, $(LOCAL_PATH)/full_ancora_tmo.mk)
 PRODUCT_RELEASE_NAME := ancora_tmo
 
 # Setup device configuration
-PRODUCT_NAME := cm_ancora_tmo
+PRODUCT_NAME := cos_ancora_tmo
 PRODUCT_DEVICE := ancora_tmo
 PRODUCT_BRAND := Samsung
 PRODUCT_MANUFACTURER := Samsung
